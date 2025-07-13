@@ -44,7 +44,6 @@ export class ZigProvider {
         const zigConfig = vscode.workspace.getConfiguration("zig");
         if (!zigPath) {
             await workspaceConfigUpdateNoThrow(zigConfig, "path", undefined, true);
-            this.set(null);
             return;
         }
         const newValue = this.resolveZigPathConfigOption(zigPath);
